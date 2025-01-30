@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BilleteraVirtual.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae828ebfc62d7b29bea5467be204ad78ac17d0af")]
 [assembly: System.Reflection.AssemblyProductAttribute("BilleteraVirtual.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BilleteraVirtual.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

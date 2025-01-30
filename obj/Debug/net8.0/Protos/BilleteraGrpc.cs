@@ -49,6 +49,10 @@ namespace Billetera {
     static readonly grpc::Marshaller<global::Billetera.SaldoRequest> __Marshaller_billetera_SaldoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.SaldoRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Billetera.SaldoResponse> __Marshaller_billetera_SaldoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.SaldoResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Billetera.TransaccionRequest> __Marshaller_billetera_TransaccionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.TransaccionRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Billetera.TransaccionResponse> __Marshaller_billetera_TransaccionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.TransaccionResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse> __Method_ObtenerSaldo = new grpc::Method<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse>(
@@ -57,6 +61,14 @@ namespace Billetera {
         "ObtenerSaldo",
         __Marshaller_billetera_SaldoRequest,
         __Marshaller_billetera_SaldoResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Billetera.TransaccionRequest, global::Billetera.TransaccionResponse> __Method_RealizarTransaccion = new grpc::Method<global::Billetera.TransaccionRequest, global::Billetera.TransaccionResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RealizarTransaccion",
+        __Marshaller_billetera_TransaccionRequest,
+        __Marshaller_billetera_TransaccionResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +86,12 @@ namespace Billetera {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Billetera.TransaccionResponse> RealizarTransaccion(global::Billetera.TransaccionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +100,8 @@ namespace Billetera {
     public static grpc::ServerServiceDefinition BindService(BilleteraServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_ObtenerSaldo, serviceImpl.ObtenerSaldo).Build();
+          .AddMethod(__Method_ObtenerSaldo, serviceImpl.ObtenerSaldo)
+          .AddMethod(__Method_RealizarTransaccion, serviceImpl.RealizarTransaccion).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -93,6 +112,7 @@ namespace Billetera {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, BilleteraServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_ObtenerSaldo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse>(serviceImpl.ObtenerSaldo));
+      serviceBinder.AddMethod(__Method_RealizarTransaccion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.TransaccionRequest, global::Billetera.TransaccionResponse>(serviceImpl.RealizarTransaccion));
     }
 
   }

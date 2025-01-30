@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\TrabajosU\\ProyectoBV\\BilleteraVirtual.API\\BilleteraVirtual.API.csproj": {}
+    "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\BilleteraVirtual.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\TrabajosU\\ProyectoBV\\BilleteraVirtual.API\\BilleteraVirtual.API.csproj": {
+    "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\BilleteraVirtual.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\TrabajosU\\ProyectoBV\\BilleteraVirtual.API\\BilleteraVirtual.API.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\BilleteraVirtual.API.csproj",
         "projectName": "BilleteraVirtual.API",
-        "projectPath": "C:\\Users\\user\\Documents\\TrabajosU\\ProyectoBV\\BilleteraVirtual.API\\BilleteraVirtual.API.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\BilleteraVirtual.API.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\TrabajosU\\ProyectoBV\\BilleteraVirtual.API\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

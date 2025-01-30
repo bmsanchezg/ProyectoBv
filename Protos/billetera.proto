@@ -4,6 +4,7 @@ package billetera;
 
 service BilleteraService {
   rpc ObtenerSaldo (SaldoRequest) returns (SaldoResponse);
+  rpc RealizarTransaccion (TransaccionRequest) returns (TransaccionResponse);
 }
 
 message SaldoRequest {
@@ -12,4 +13,14 @@ message SaldoRequest {
 
 message SaldoResponse {
   double saldo = 1;
+}
+
+message TransaccionRequest {
+  int32 sender_account_id = 1;
+  int32 receiver_account_id = 2;
+  double amount = 3;
+}
+
+message TransaccionResponse {
+  string status = 1;
 }
