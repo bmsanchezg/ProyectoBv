@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package billetera;
+
+service BilleteraService {
+  rpc ObtenerSaldo (SaldoRequest) returns (SaldoResponse);
+}
+
+message SaldoRequest {
+  int32 account_id = 1;
+}
+
+message SaldoResponse {
+  double saldo = 1;
+}

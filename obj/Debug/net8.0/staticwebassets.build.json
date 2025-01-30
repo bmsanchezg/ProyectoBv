@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "cOTqgVHjZcI67xyzKLbUVShB0/Hjq4tQJS0OiDWt9tQ=",
+  "Source": "BilleteraVirtual.API",
+  "BasePath": "_content/BilleteraVirtual.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/Billetera.cs \
+obj\Debug\net8.0\Protos/BilleteraGrpc.cs: Protos/billetera.proto
