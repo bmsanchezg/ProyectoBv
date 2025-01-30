@@ -81,6 +81,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Grpc.AspNetCore.Web/2.67.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Grpc.AspNetCore.Web.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Grpc.AspNetCore.Web.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Grpc.Core.Api/2.67.0": {
         "type": "package",
         "compile": {
@@ -1493,6 +1509,31 @@
         "lib/net9.0/Grpc.AspNetCore.Server.ClientFactory.dll",
         "lib/net9.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
         "lib/net9.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.AspNetCore.Web/2.67.0": {
+      "sha512": "Cc0HEeD6mQcqhA1UazfTxfOaBJo36YNi5L8xHPA6SnOo7BI7lUKHs3kp2+eAYLcB6TzPZgV7artmb1V2uL5PDQ==",
+      "type": "package",
+      "path": "grpc.aspnetcore.web/2.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.web.2.67.0.nupkg.sha512",
+        "grpc.aspnetcore.web.nuspec",
+        "lib/net6.0/Grpc.AspNetCore.Web.dll",
+        "lib/net6.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net6.0/Grpc.AspNetCore.Web.xml",
+        "lib/net7.0/Grpc.AspNetCore.Web.dll",
+        "lib/net7.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Web.xml",
+        "lib/net8.0/Grpc.AspNetCore.Web.dll",
+        "lib/net8.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net8.0/Grpc.AspNetCore.Web.xml",
+        "lib/net9.0/Grpc.AspNetCore.Web.dll",
+        "lib/net9.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net9.0/Grpc.AspNetCore.Web.xml",
         "packageIcon.png"
       ]
     },
@@ -4145,6 +4186,7 @@
       "BCrypt.Net-Next >= 4.0.3",
       "Google.Protobuf >= 3.29.3",
       "Grpc.AspNetCore >= 2.67.0",
+      "Grpc.AspNetCore.Web >= 2.67.0",
       "Grpc.Tools >= 2.69.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.1",
@@ -4215,6 +4257,10 @@
             "version": "[3.29.3, )"
           },
           "Grpc.AspNetCore": {
+            "target": "Package",
+            "version": "[2.67.0, )"
+          },
+          "Grpc.AspNetCore.Web": {
             "target": "Package",
             "version": "[2.67.0, )"
           },

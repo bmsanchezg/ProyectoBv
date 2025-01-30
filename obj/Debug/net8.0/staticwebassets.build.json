@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "Edo+wXMVoPaRI4Hf4s5B4QP0A+1SOsPYHHubuRKYNNo=",
+  "Source": "BilleteraVirtual.API",
+  "BasePath": "_content/BilleteraVirtual.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BilleteraVirtual.API\\wwwroot",
+      "Source": "BilleteraVirtual.API",
+      "ContentRoot": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\wwwroot\\",
+      "BasePath": "_content/BilleteraVirtual.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

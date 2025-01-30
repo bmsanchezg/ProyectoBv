@@ -9,60 +9,51 @@ namespace BilleteraVirtual.API.Security
 {
     public class JwtService
     {
-        private readonly IConfiguration _config;
+        private readonly string _key;
+        private readonly string _issuer;
+        private readonly string _audience;
 
         public JwtService(IConfiguration config)
         {
-            _config = config;
+            _key = config["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key is missing in appsettings.json");
+            _issuer = config["Jwt:Issuer"] ?? "yourdomain.com";
+            _audience = config["Jwt:Audience"] ?? "yourdomain.com";
+
+            if (_key.Length < 32) // 🔥 Evita claves menores a 256 bits
+            {
+                throw new Exception("🔴 ERROR: La clave JWT es demasiado corta. Debe tener al menos 32 caracteres.");
+            }
         }
 
         public string GenerateToken(int userId, string email)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-
-            var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(Convert.ToDouble(_config["Jwt:ExpireMinutes"])),
-                signingCredentials: creds
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        public ClaimsPrincipal? ValidateToken(string token)
-        {
             try
             {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
+                var keyBytes = Encoding.UTF8.GetBytes(_key);
+                var securityKey = new SymmetricSecurityKey(keyBytes);
+                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-                var validationParameters = new TokenValidationParameters
+                var claims = new[]
                 {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidIssuer = _config["Jwt:Issuer"],
-                    ValidateAudience = true,
-                    ValidAudience = _config["Jwt:Audience"],
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero
+                    new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 };
 
-                return tokenHandler.ValidateToken(token, validationParameters, out _);
+                var token = new JwtSecurityToken(
+                    _issuer,
+                    _audience,
+                    claims,
+                    expires: DateTime.UtcNow.AddHours(2),
+                    signingCredentials: credentials
+                );
+
+                return new JwtSecurityTokenHandler().WriteToken(token);
             }
-            catch
+            catch (Exception ex)
             {
-                return null;
+                Console.WriteLine($"🔴 ERROR al generar el token: {ex.Message}");
+                throw new Exception("Error al generar el token JWT", ex);
             }
         }
     }

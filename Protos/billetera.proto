@@ -1,13 +1,41 @@
-syntax = "proto3";
+﻿syntax = "proto3";
 
 package billetera;
 
 service BilleteraService {
   rpc ObtenerSaldo (SaldoRequest) returns (SaldoResponse);
   rpc RealizarTransaccion (TransaccionRequest) returns (TransaccionResponse);
-  rpc Login (AuthRequest) returns (AuthResponse);
 }
 
+service AuthService {
+  rpc Login (AuthRequest) returns (AuthResponse);
+  rpc CrearUsuario (RegisterRequest) returns (RegisterResponse);
+}
+
+// 🔹 Mensajes de Login
+message AuthRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string token = 1;
+}
+
+// 🔹 Mensajes para Crear Usuario
+message RegisterRequest {
+  string cedula = 1;
+  string firstName = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message RegisterResponse {
+  int32 userId = 1;
+  string message = 2;
+}
+
+// 🔹 Mensajes de Transacciones y Saldo
 message SaldoRequest {
   int32 account_id = 1;
 }
@@ -24,17 +52,4 @@ message TransaccionRequest {
 
 message TransaccionResponse {
   string status = 1;
-}
-
-service AuthService {
-  rpc Login (AuthRequest) returns (AuthResponse);
-}
-
-message AuthRequest {
-  string email = 1;
-  string password = 2;
-}
-
-message AuthResponse {
-  string token = 1;
 }

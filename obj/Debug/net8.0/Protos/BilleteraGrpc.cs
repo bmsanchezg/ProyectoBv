@@ -53,10 +53,6 @@ namespace Billetera {
     static readonly grpc::Marshaller<global::Billetera.TransaccionRequest> __Marshaller_billetera_TransaccionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.TransaccionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Billetera.TransaccionResponse> __Marshaller_billetera_TransaccionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.TransaccionResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Billetera.AuthRequest> __Marshaller_billetera_AuthRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.AuthRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Billetera.AuthResponse> __Marshaller_billetera_AuthResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.AuthResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse> __Method_ObtenerSaldo = new grpc::Method<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse>(
@@ -73,14 +69,6 @@ namespace Billetera {
         "RealizarTransaccion",
         __Marshaller_billetera_TransaccionRequest,
         __Marshaller_billetera_TransaccionResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Billetera.AuthRequest, global::Billetera.AuthResponse> __Method_Login = new grpc::Method<global::Billetera.AuthRequest, global::Billetera.AuthResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "Login",
-        __Marshaller_billetera_AuthRequest,
-        __Marshaller_billetera_AuthResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -104,12 +92,6 @@ namespace Billetera {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Billetera.AuthResponse> Login(global::Billetera.AuthRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -119,8 +101,7 @@ namespace Billetera {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ObtenerSaldo, serviceImpl.ObtenerSaldo)
-          .AddMethod(__Method_RealizarTransaccion, serviceImpl.RealizarTransaccion)
-          .AddMethod(__Method_Login, serviceImpl.Login).Build();
+          .AddMethod(__Method_RealizarTransaccion, serviceImpl.RealizarTransaccion).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -132,7 +113,6 @@ namespace Billetera {
     {
       serviceBinder.AddMethod(__Method_ObtenerSaldo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.SaldoRequest, global::Billetera.SaldoResponse>(serviceImpl.ObtenerSaldo));
       serviceBinder.AddMethod(__Method_RealizarTransaccion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.TransaccionRequest, global::Billetera.TransaccionResponse>(serviceImpl.RealizarTransaccion));
-      serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.AuthRequest, global::Billetera.AuthResponse>(serviceImpl.Login));
     }
 
   }
@@ -177,6 +157,10 @@ namespace Billetera {
     static readonly grpc::Marshaller<global::Billetera.AuthRequest> __Marshaller_billetera_AuthRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.AuthRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Billetera.AuthResponse> __Marshaller_billetera_AuthResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.AuthResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Billetera.RegisterRequest> __Marshaller_billetera_RegisterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.RegisterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Billetera.RegisterResponse> __Marshaller_billetera_RegisterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Billetera.RegisterResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Billetera.AuthRequest, global::Billetera.AuthResponse> __Method_Login = new grpc::Method<global::Billetera.AuthRequest, global::Billetera.AuthResponse>(
@@ -185,6 +169,14 @@ namespace Billetera {
         "Login",
         __Marshaller_billetera_AuthRequest,
         __Marshaller_billetera_AuthResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Billetera.RegisterRequest, global::Billetera.RegisterResponse> __Method_CrearUsuario = new grpc::Method<global::Billetera.RegisterRequest, global::Billetera.RegisterResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CrearUsuario",
+        __Marshaller_billetera_RegisterRequest,
+        __Marshaller_billetera_RegisterResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -202,6 +194,12 @@ namespace Billetera {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Billetera.RegisterResponse> CrearUsuario(global::Billetera.RegisterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -210,7 +208,8 @@ namespace Billetera {
     public static grpc::ServerServiceDefinition BindService(AuthServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Login, serviceImpl.Login).Build();
+          .AddMethod(__Method_Login, serviceImpl.Login)
+          .AddMethod(__Method_CrearUsuario, serviceImpl.CrearUsuario).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -221,6 +220,7 @@ namespace Billetera {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, AuthServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.AuthRequest, global::Billetera.AuthResponse>(serviceImpl.Login));
+      serviceBinder.AddMethod(__Method_CrearUsuario, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Billetera.RegisterRequest, global::Billetera.RegisterResponse>(serviceImpl.CrearUsuario));
     }
 
   }

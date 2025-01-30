@@ -3,6 +3,9 @@ using BilleteraVirtual.API.Data;
 using Billetera;
 using Microsoft.EntityFrameworkCore;
 using BilleteraVirtual.API.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+
 namespace BilleteraVirtual.API.Services
 {
     public class BilleteraService : Billetera.BilleteraService.BilleteraServiceBase
@@ -14,15 +17,40 @@ namespace BilleteraVirtual.API.Services
             _context = context;
         }
 
+        // 🔹 Método para verificar si el usuario está autenticado
+        private int? GetAuthenticatedUserId(ServerCallContext context)
+        {
+            var authHeader = context.RequestHeaders.FirstOrDefault(h => h.Key == "authorization")?.Value;
+
+            if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+            {
+                throw new RpcException(new Status(StatusCode.Unauthenticated, "Token no proporcionado o inválido"));
+            }
+
+            var token = authHeader.Substring("Bearer ".Length).Trim();
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            var userIdClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
+            return userIdClaim != null ? int.Parse(userIdClaim) : null;
+        }
+
         public override async Task<SaldoResponse> ObtenerSaldo(SaldoRequest request, ServerCallContext context)
         {
+            // 🔹 Verifica que el usuario esté autenticado
+            int? userId = GetAuthenticatedUserId(context);
+            if (userId == null)
+            {
+                throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario no autenticado"));
+            }
+
             var account = await _context.Accounts
-                .Where(a => a.Id == request.AccountId) // ✅ Asegurar que se compara con `Id`
+                .Where(a => a.Id == request.AccountId)
                 .FirstOrDefaultAsync();
 
-            if (account == null)
+            if (account == null || account.UserId != userId)
             {
-                throw new RpcException(new Status(StatusCode.NotFound, "Cuenta no encontrada"));
+                throw new RpcException(new Status(StatusCode.PermissionDenied, "No tienes acceso a esta cuenta"));
             }
 
             return new SaldoResponse { Saldo = (double)account.Amount };
@@ -30,12 +58,25 @@ namespace BilleteraVirtual.API.Services
 
         public override async Task<TransaccionResponse> RealizarTransaccion(TransaccionRequest request, ServerCallContext context)
         {
+            // 🔹 Verifica que el usuario esté autenticado
+            int? userId = GetAuthenticatedUserId(context);
+            if (userId == null)
+            {
+                throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario no autenticado"));
+            }
+
             var sender = await _context.Accounts.FindAsync(request.SenderAccountId);
             var receiver = await _context.Accounts.FindAsync(request.ReceiverAccountId);
 
             if (sender == null || receiver == null)
             {
                 return new TransaccionResponse { Status = "FAILED - Account not found" };
+            }
+
+            // 🔹 Verifica que la cuenta de origen pertenece al usuario autenticado
+            if (sender.UserId != userId)
+            {
+                throw new RpcException(new Status(StatusCode.PermissionDenied, "No tienes permiso para operar esta cuenta"));
             }
 
             if (request.Amount <= 0)
@@ -81,14 +122,13 @@ namespace BilleteraVirtual.API.Services
 
                     return new TransaccionResponse { Status = "COMPLETED" };
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await transactionScope.RollbackAsync(); // Revertir en caso de error
                     return new TransaccionResponse { Status = "FAILED - Error processing transaction" };
                 }
             }
         }
-
 
         // 🔹 Función para obtener el siguiente ID en el rango de [10000000 - 99999999]
         private async Task<int> GetNextTransactionId()
@@ -102,33 +142,12 @@ namespace BilleteraVirtual.API.Services
 
             if (lastTransaction == null || lastTransaction.Id < minId)
             {
-                return minId; // 🔹 Si no hay transacciones, iniciar en el mínimo del rango
+                return minId;
             }
 
             int nextId = lastTransaction.Id + 1;
 
-            return (nextId > maxId) ? minId : nextId; // 🔹 Si llegamos al máximo, reiniciar el ID
-        }
-
-        private async Task<int> GetNextAccountId()
-        {
-            int minId = 100000;
-            int maxId = 999999;
-
-            var lastAccount = await _context.Accounts
-                .OrderByDescending(a => a.Id)
-                .FirstOrDefaultAsync();
-
-            if (lastAccount == null || lastAccount.Id < minId)
-            {
-                return minId;
-            }
-
-            int nextId = lastAccount.Id + 1;
-
             return (nextId > maxId) ? minId : nextId;
         }
-
-
     }
 }
