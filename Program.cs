@@ -1,41 +1,54 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using BilleteraVirtual.API.Data;
+﻿using BilleteraVirtual.API.Data;
+using BilleteraVirtual.API.Security;
 using BilleteraVirtual.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// 🔹 Configurar Kestrel para usar HTTP/2 (Necesario para gRPC)
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.ListenLocalhost(5000, listenOptions =>
-    {
-        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2; // 🔹 HTTP/2 obligatorio para gRPC
-    });
-
-    // 🔹 Opcional: Habilitar HTTPS para Postman (descomentar si es necesario)
-    // options.ListenLocalhost(5001, listenOptions =>
-    // {
-    //     listenOptions.UseHttps(); // 🔹 Habilita TLS en el puerto 5001
-    //     listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
-    // });
-});
 
 // 🔹 Configurar la conexión a PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// 🔹 Configurar autenticación JWT
+var jwtKey = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(jwtKey),
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+// 🔹 Registrar los servicios de seguridad
+builder.Services.AddSingleton<JwtService>();
+builder.Services.AddSingleton<BCryptService>();
+
 // 🔹 Registrar servicios gRPC
 builder.Services.AddGrpc();
 
+// 🔹 Agregar autorización
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
-// 🔹 Asegurar que gRPC funcione correctamente
 app.UseRouting();
 
+app.UseAuthentication(); // ✅ Middleware de autenticación
+app.UseAuthorization();  // ✅ Middleware de autorización
+
+// 🔹 Registrar los servicios gRPC
 app.MapGrpcService<BilleteraService>();
+app.MapGrpcService<AuthService>(); // Nuevo servicio para autenticación
 
 app.Run();

@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\protos\\billetera.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:protos\\billetera.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -15,20 +19,32 @@
       "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\security\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:security\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\security\\bcryptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:security\\bcryptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\services\\billeteraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:services\\billeteraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\protos\\billetera.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:protos\\billetera.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|c:\\users\\user\\documents\\trabajosu\\git\\proyectobv\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A0F4B5D-362F-4850-ACC9-2C0920A36CEB}|BilleteraVirtual.API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,36 +53,133 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "DockedHeight": 257,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "BCryptService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Security\\BCryptService.cs",
+              "RelativeDocumentMoniker": "Security\\BCryptService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Security\\BCryptService.cs",
+              "RelativeToolTip": "Security\\BCryptService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:05:52.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:03:04.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Security\\JwtService.cs",
+              "RelativeDocumentMoniker": "Security\\JwtService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Security\\JwtService.cs",
+              "RelativeToolTip": "Security\\JwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:01:08.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "BilleteraService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Services\\BilleteraService.cs",
               "RelativeDocumentMoniker": "Services\\BilleteraService.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Services\\BilleteraService.cs",
               "RelativeToolTip": "Services\\BilleteraService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAqwCwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-30T04:22:36.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T01:53:47.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "billetera.proto",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Protos\\billetera.proto",
+              "RelativeDocumentMoniker": "Protos\\billetera.proto",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Protos\\billetera.proto",
+              "RelativeToolTip": "Protos\\billetera.proto",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2025-01-30T04:19:07.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-30T01:49:10.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "Models\\Transaction.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Models\\Transaction.cs",
+              "RelativeToolTip": "Models\\Transaction.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA2wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T06:24:05.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Models\\Account.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Models\\Account.cs",
               "RelativeToolTip": "Models\\Account.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-30T01:54:53.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\DATA\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DATA\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\DATA\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DATA\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAewAsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T01:50:22.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -75,61 +188,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-30T01:54:30.301Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T01:53:47.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\DATA\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DATA\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\DATA\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DATA\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T01:50:22.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "billetera.proto",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Protos\\billetera.proto",
-              "RelativeDocumentMoniker": "Protos\\billetera.proto",
-              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\Protos\\billetera.proto",
-              "RelativeToolTip": "Protos\\billetera.proto",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
-              "WhenOpened": "2025-01-30T04:19:07.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\user\\Documents\\TrabajosU\\git\\ProyectoBv\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-30T01:49:10.228Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 200,
+          "DockedHeight": 143,
           "SelectedChildIndex": -1,
           "Children": [
             {

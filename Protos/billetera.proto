@@ -5,6 +5,7 @@ package billetera;
 service BilleteraService {
   rpc ObtenerSaldo (SaldoRequest) returns (SaldoResponse);
   rpc RealizarTransaccion (TransaccionRequest) returns (TransaccionResponse);
+  rpc Login (AuthRequest) returns (AuthResponse);
 }
 
 message SaldoRequest {
@@ -23,4 +24,17 @@ message TransaccionRequest {
 
 message TransaccionResponse {
   string status = 1;
+}
+
+service AuthService {
+  rpc Login (AuthRequest) returns (AuthResponse);
+}
+
+message AuthRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string token = 1;
 }
